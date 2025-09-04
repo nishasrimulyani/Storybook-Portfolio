@@ -4,3 +4,25 @@
 
 
 html, body, #root { height: 100%; }
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    to right,
+    #ec4899, /* pink-500 */
+    #8b5cf6, /* purple-500 */
+    #3b82f6  /* blue-500 */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}

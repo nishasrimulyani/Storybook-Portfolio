@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        chewy: ["Chewy", "cursive"], // 👈 custom font class
+        poppins: ["Nunito", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }
+
+

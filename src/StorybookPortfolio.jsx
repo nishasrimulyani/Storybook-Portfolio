@@ -4,8 +4,8 @@ import { useRef, useState, useEffect } from "react";
 export default function StorybookPortfolio() {
 
   const pages = [
-    { title : "Welcome To My Storybook Portfolio 🚀", bg : "from-blue-100 to-indigo-200"},
-    { title : "About Me ✨", bg : "from-purple-100 to-pink-200", type:"text-box"},
+    { title : "WELCOME TO MY STORYBOOK 🚀", bg : "from-blue-100 to-indigo-200"},
+    { title : "", bg : "from-purple-100 to-pink-200", type:"text-box"},
     { title : "My Project 💡", bg : "from-green-100 to-emerald-200", type:"image-box"},
     
   ];
@@ -109,10 +109,42 @@ export default function StorybookPortfolio() {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-5xl font-serif mb-4 text-center z-10 select-text text-indigo-800"
+              className="text-8xl md:text-79xl font-chewy mb-4 text-center z-10 select-text text-indigo-800"
             >
               {pg.title}
             </motion.h1>
+
+            {/* Page Specific Content */}
+            {pg.type === "text-box" && (
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="text-center z-10"
+              >
+                {/* Big Greeting */}
+                <h1 className="text-7xl md:text-8xl font-poppins text-indigo-800 ">
+                  Hi, I'm {" "}
+                  <span className=" shimmer-text font-chewy">
+                    NISHA SRI MULYANI 
+                  </span>
+                  <span>
+                     ✨ 
+                  </span>
+                </h1>
+
+                {/* Name + Role */}
+                <p className="mt-7 text-xl text-gray-700 font-extrabold font-poppins">
+                  <span className="italic text-2xl">  Data Enthusiast | IT Support </span>
+                </p>
+
+                {/* Paragraph */}
+                <p className="mt-10 max-w-4xl text-gray-600 text-3xl leading-relaxed mx-auto font-poppins">
+                  Transforming raw data into stories and solutions, while supporting technology that empowers people. Connecting data-driven decisions with smooth IT experiences.               
+                </p>
+              </motion.div>
+            )}
 
             {i < pages.length - 1 && (
               <motion.button
