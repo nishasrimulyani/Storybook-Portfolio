@@ -31,7 +31,7 @@ export default function StorybookPortfolio() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [refs]);
+  }, []);
 
 
 
@@ -71,8 +71,8 @@ export default function StorybookPortfolio() {
             className={`relative h-screen snap-start flex flex-col items-center justify-center bg-gradient-to-b ${pg.bg} p-8 overflow-hidden select-none`}>
             
             {/* Starry Background */}
-            <div className="absolute inset-0 overflow-hidden z-0">
-              {[...Array(50).map((_, starIdx)=> 
+            <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+              {[...Array(50)].map((_, starIdx)=> (
                 <motion.div
                   key={starIdx}
                   className="absolute w-1 h-1 bg-white rounded-full"
@@ -89,8 +89,17 @@ export default function StorybookPortfolio() {
                     repeatType: "reverse",
                   }}
                 />
-              )]} 
+              ))} 
             </div>
+
+            {/* Floating Glow */}
+            <motion.div
+              style={{ y,opacity }}
+              animate={{ scale: [1, 1.2, 1], rotate: [0, 15, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 10, ease: "easeInOut"}}
+              className="absolute w-72 h-72 rounded-full bg-white/30 blur-3xl"
+            />
+
             <motion.div
               style={{ y, opacity }}
               className="absolute w-72 h-72 rounded-full bg-white/30 blur-3xl">
