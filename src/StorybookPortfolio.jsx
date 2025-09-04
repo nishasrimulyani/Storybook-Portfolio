@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
 export default function StorybookPortfolio() {
+
+  const page = [
+
+  ]
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -11,6 +15,12 @@ export default function StorybookPortfolio() {
       <h1 className="text-4xl font-bold text-indigo-800">
         Welcome To My Storybook Portfolio 🚀
       </h1>
+
+      <button className="absolute bottom-10 z-10 bg-indigo-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition">
+        Let's Go →
+      </button>
     </motion.div>
-  );
+    
+  )
+  
 }
